@@ -104,9 +104,29 @@ const data = [
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 */
 function createArticle (title, date, firstParagraph, secondParagraph, thirdParagraph) {
-  const article = document.createElement('div')
-  const articleTitle = document.createElement('h2')
+  // ===== Component Structure ===== //
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p')
+  const alphaContent = document.createElement('p');
+  const betaContent = document.createElement('p');
+  const charlieContent = document.createElement('p');
+  const btnSpan = document.createElement('span');
+
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(alphaContent);
+  article.appendChild(betaContent);
+  article.appendChild(charlieContent);
+  article.appendChild(btnSpan);
+  // console.log(article);
+  // ===== Assigns Classes ===== //
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  btnSpan.classList.add('expandButton');
+  console.log(article);
 }
+createArticle();
 /*
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
