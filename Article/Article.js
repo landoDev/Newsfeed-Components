@@ -160,8 +160,6 @@ function createArticle (title, date, firstParagraph, secondParagraph, thirdParag
   const betaContent = document.createElement('p');
   const charlieContent = document.createElement('p');
   const btnSpan = document.createElement('span');
-  const btnExpand = document.createElement('button');
-  const btnClose = document.createElement('button');
 
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
@@ -169,34 +167,29 @@ function createArticle (title, date, firstParagraph, secondParagraph, thirdParag
   article.appendChild(betaContent);
   article.appendChild(charlieContent);
   article.appendChild(btnSpan);
-  btnSpan.appendChild(btnExpand);
-  btnSpan.appendChild(btnClose);
-  // console.log(article);
+
   // ===== Assigns Classes ===== //
   article.classList.add('article',); // 'article-open' ?
   articleDate.classList.add('date');
-  btnSpan.classList.add('expandButton',);
-  btnExpand.classList.add('article-open');
-  btnClose.classList.add('close');
-  console.log(article);
+  btnSpan.classList.add('expandButton');
   // ===== Adds Content ===== //
   articleTitle.textContent = title;
   articleDate.textContent = date;
   alphaContent.textContent = firstParagraph;
   betaContent.textContent = secondParagraph;
   charlieContent.textContent = thirdParagraph;
-  // btnExpand.textContent = 'Expand';
-  btnClose.textContent = 'Collapse';
+  btnSpan.textContent = "Click Here";
 
   /*
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
   */
   // ===== Expand Button Event ===== //
+  // const expandBtn = document.createElement('button');
+  // btnSpan.appendChild(expandBtn);
+  // expandBtn.textContent = 'Unread';
   btnSpan.addEventListener('click', (event) => {
-    console.log('button click', event.target)
-    btnExpand.classList.toggle('article-open')
-    article.classList.toggle('close')
     article.classList.toggle('article-open');
+    // expandBtn.textContent = 'Read';
   })
   /*
   Step 3: return the entire component.
